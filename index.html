@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Digital Business Card</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+</head>
+<body>
+  <div class="card">
+    <img src="https://avatars.githubusercontent.com/u/583231" alt="Your Photo" class="avatar" />
+    <h1>Nikhil S</h1>
+    <p class="subtitle">Web Developer • Student • Hacker</p>
+
+    <div class="links">
+      <a href="mailto:nikhils2412@gmail.com" target="_blank">📧 Email</a>
+      <a href="https://github.com/Nikhils12" target="_blank">🐙 GitHub</a>
+      <a href="https://www.linkedin.com/in/nikhil-s-6a7a42376/" target="_blank">🔗 LinkedIn</a>
+    </div>
+
+    <h3>Scan Me 👇</h3>
+    <canvas id="qrcode"></canvas>
+  </div>
+
+  <script>
+    const cardUrl = "https://vercel.com/nikhils12-4028s-projects"; // You can hardcode this or use window.location.href
+    QRCode.toCanvas(document.getElementById('qrcode'), cardUrl, function (error) {
+      if (error) console.error(error);
+    });
+  </script>
+</body>
+</html>
